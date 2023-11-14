@@ -23,9 +23,11 @@ int _printf(const char * const format, ...)
 
 	va_start(args, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	{
 		return (-1);
+	}
 
-Check:
+
 	while (format[a] != '\0')
 	{
 		b = 13;
@@ -35,13 +37,13 @@ Check:
 			{
 				length += ptr[b].fun(args);
 				a = a + 2;
-				goto Check;
+				break;
 			}
 			b--;
 		}
 		_putchar(format[a]);
 		length++;
-		b++;
+		a++;
 	}
 	va_end(args);
 	return (length);

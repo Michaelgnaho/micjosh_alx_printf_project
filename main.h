@@ -1,6 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <stdio.h>
 #include <limits.h>
 #include <stdarg.h>
 #include <stdlib.h>
@@ -8,8 +9,8 @@
 
 /**
  * struct format - converter for printf
- * @ph: type char pointer of the specifier
- * @function: function for the conversion specifier
+ * @pt: type char pointer of the specifier
+ * @fun: function for the conversion specifier
  *
  */
 
