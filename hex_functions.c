@@ -2,17 +2,20 @@
 
 /**
  * hex_lower - prints lowercase hexadecimal number.
- * @value: arguments.
- * Return: counter.
+ * @value: arguments
+ * @p: pointer to the structure flags
+ * Return: counter
  */
 
-int hex_lower(va_list value)
+int hex_lower(va_list value, flags_b *p)
 {
 	int a;
 	int *array;
 	int count = 0;
 	unsigned int n = va_arg(value, unsigned int);
 	unsigned int tem = n;
+
+	(void)p;
 
 	while (n / 16 != 0)
 	{
@@ -42,17 +45,20 @@ int hex_lower(va_list value)
 
 /**
  * hex_upper - prints uppercase hexadecimal number.
- * @value: arguments.
- * Return: counter.
+ * @value: arguments
+ * @p: pointer to the structure flags
+ * Return: counter
  */
 
-int hex_upper(va_list value)
+int hex_upper(va_list value, flags_b *p)
 {
 	int a;
 	int *array;
 	int count = 0;
 	unsigned int n = va_arg(value, unsigned int);
 	unsigned int tem = n;
+
+	(void)p;
 
 	while (n / 16 != 0)
 	{

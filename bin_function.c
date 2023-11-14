@@ -2,16 +2,19 @@
 
 /**
  * print_binary - prints binary number.
- * @value: parameter.
+ * @value: parameter
+ * @p: pointer to the structure flags.
  * Return: integer
  */
-int print_binary(va_list value)
+int print_binary(va_list value, flags_b *p)
 {
 	int flag = 0;
 	int count = 0;
 	int i, a = 1, b;
 	unsigned int j;
 	unsigned int n = va_arg(value, unsigned int);
+
+	(void)p;
 
 	for (i = 0; i < 32; i++)
 	{

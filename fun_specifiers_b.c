@@ -2,14 +2,17 @@
 /**
  * print_unsigned - prints unsigned integer
  * @ap: argument to print
+ * @p: pointer to the structure flags
  * Return: integer
  */
 
-int print_unsigned(va_list ap)
+int print_unsigned(va_list ap, flags_b *p)
 {
 	unsigned int a = va_arg(ap, unsigned int);
 	int num, last = a % 10, digit, exp = 1;
 	int  b = 1;
+
+	(void)p;
 
 	a = a / 10;
 	num = a;
@@ -47,17 +50,20 @@ int print_unsigned(va_list ap)
 
 /**
  * print_octal - prints an octal number.
- * @value: arguments.
- * Return: counter.
+ * @value: arguments
+ * @p: pointer to the structure flags
+ * Return: counter
  */
 
-int print_octal(va_list value)
+int print_octal(va_list value, flags_b *p)
 {
 	int a;
 	int *array;
 	int count = 0;
 	unsigned int n = va_arg(value, unsigned int);
 	unsigned int tem = n;
+
+	(void)p;
 
 	while (n / 8 != 0)
 	{

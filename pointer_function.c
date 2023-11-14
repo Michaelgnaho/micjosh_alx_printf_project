@@ -2,17 +2,20 @@
 
 /**
  * print_ptr - prints a hexadecimal number.
- * @ap: arguments.
- * Return: counter.
+ * @ap: arguments
+ * @p: pointer to the structure flags
+ * Return: counter
  */
 
-int print_ptr(va_list ap)
+int print_ptr(va_list ap, flags_b *p)
 {
 	void *ptr;
 	char *str = "(nil)";
 	long int a;
 	int b;
 	int i;
+
+	(void)p;
 
 	ptr = va_arg(ap, void*);
 	if (ptr == NULL)
@@ -33,7 +36,7 @@ int print_ptr(va_list ap)
 
 
 /**
- * print_extra - prints a hexadecimal number.
+ * print_extra - helper function that prints a hexadecimal number.
  * @n: arguments.
  * Return: counter.
  */

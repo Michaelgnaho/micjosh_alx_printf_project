@@ -2,14 +2,17 @@
 
 /**
  * print_S - prints exclusive string.
- * @ap: parameter.
- * Return: integer.
+ * @ap: parameter
+ * @p: pointer to the structure flags
+ * Return: integer
  */
 
-int print_S(va_list ap)
+int print_S(va_list ap, flags_b *p)
 {
 	char *str;
 	int a, b, length = 0;
+
+	(void)p;
 
 	str = va_arg(ap, char *);
 	if (str == NULL)
@@ -42,7 +45,7 @@ int print_S(va_list ap)
 
 
 /**
- * print_HEX - prints a hexadecimal number.
+ * print_HEX - helper function prints a hexadecimal number.
  * @num: the number to print.
  * Return: count
  */

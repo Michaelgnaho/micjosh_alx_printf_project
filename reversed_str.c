@@ -3,23 +3,24 @@
 /**
  * reverse_str - prints a given string in reverse
  * @ap: arguments
+ * @p: pointer to the structure flags
  * Return: the reversed string
  */
 
-int reverse_str(va_list ap)
+int reverse_str(va_list ap, flags_b *p)
 {
+	int i = 0, j;
+	char *s = va_arg(ap, char *);
 
-	char *str = va_arg(ap, char*);
-	int a;
-	int b = 0;
+	(void)p;
+	if (!s)
+		s = "(null)";
 
-	if (str == NULL)
-		str = "(null)";
-	while (str[b] != '\0')
-		b++;
-	for (a = b - 1; a >= 0; a--)
-	{
-		_putchar(str[a]);
-	}
-	return (b);
+	while (s[i])
+		i++;
+
+	for (j = i - 1; j >= 0; j--)
+		_putchar(s[j]);
+
+	return (i);
 }

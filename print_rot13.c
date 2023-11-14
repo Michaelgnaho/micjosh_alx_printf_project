@@ -3,11 +3,12 @@
 /**
  * print_rot13 - prints/converts to rot13
  * @ap: arguments
+ * @p: pointer to the structure flags
  * Return: counter
  *
  */
 
-int print_rot13(va_list ap)
+int print_rot13(va_list ap, flags_b *p)
 {
 	int a, b, count = 0;
 	int i = 0;
@@ -15,6 +16,7 @@ int print_rot13(va_list ap)
 	const char Alpha[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	const char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
+	(void)p;
 
 	if (str == NULL)
 		str = "(null)";

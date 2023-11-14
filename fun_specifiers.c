@@ -2,12 +2,15 @@
 
 /**
  * print_char - prints a character.
- * @ap: arguments.
- * Return: an integer.
+ * @ap: arguments
+ * @p: pointer to the structure flags
+ * Return: an integer
  */
-int print_char(va_list ap)
+int print_char(va_list ap, flags_b *p)
 {
 	char b;
+
+	(void)p;
 
 	b = va_arg(ap, int);
 	_putchar(b);
@@ -17,14 +20,17 @@ int print_char(va_list ap)
 
 /**
  * print_str - prints a string.
- * @ap: argumen t.
+ * @ap: argumen t
+ * @p: pointer to the structure flags.
  * Return: the length of the string.
  */
 
-int print_str(va_list ap)
+int print_str(va_list ap, flags_b *p)
 {
 	char *str;
 	int i, length;
+
+	(void)p;
 
 	str = va_arg(ap, char *);
 	if (str == NULL)
@@ -48,6 +54,7 @@ int print_str(va_list ap)
  * print_percent - prints the char %.
  * Return: 1.
  */
+
 int print_percent(void)
 {
 	_putchar(37);
