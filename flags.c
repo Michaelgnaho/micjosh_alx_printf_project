@@ -9,18 +9,22 @@
 
 int flags(char s, flags_b *p)
 {
+	int j = 0;
+
 	switch (s)
 	{
 		case '+':
 			p->plus = 1;
-			return (1);
+			j = 1;
+			break;
 		case ' ':
 			p->space = 1;
-			return (1);
+			j = 1;
+			break;
 		case '#':
 			p->hash = 1;
-			return (1);
-		default:
-			return (0);
+			j = 1;
+			break;
 	}
+	return (j);
 }
